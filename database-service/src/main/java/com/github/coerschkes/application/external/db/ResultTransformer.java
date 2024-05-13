@@ -36,7 +36,7 @@ class ResultTransformer {
     }
 
     private static Measurement measurementFrom(final ResultSet resultSet) throws SQLException {
-        return new Measurement(resultSet.getInt(1), resultSet.getDouble(2), resultSet.getLong(3));
+        return new Measurement(resultSet.getInt(1), resultSet.getInt(4), resultSet.getDouble(2), resultSet.getLong(3));
     }
 
     private static MeasurementSeries measurementSeriesFrom(final ResultSet resultSet) throws SQLException {

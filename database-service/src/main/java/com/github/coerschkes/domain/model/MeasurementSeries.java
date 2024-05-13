@@ -37,6 +37,10 @@ public class MeasurementSeries {
         return measurementSize;
     }
 
+    public Measurement[] getMeasurements() {
+        return measurements;
+    }
+
     public void setMeasurements(Measurement[] measurements) {
         this.measurements = measurements;
     }
