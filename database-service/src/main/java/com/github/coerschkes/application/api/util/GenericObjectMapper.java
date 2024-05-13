@@ -1,4 +1,4 @@
-package com.github.coerschkes.util;
+package com.github.coerschkes.application.api.util;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;

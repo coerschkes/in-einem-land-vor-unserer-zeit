@@ -1,11 +1,11 @@
 package com.github.coerschkes.application.api;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.github.coerschkes.application.api.util.GenericObjectMapper;
 import com.github.coerschkes.application.external.db.MeasurementRepository;
 import com.github.coerschkes.application.external.db.MeasurementRepositoryImpl;
 import com.github.coerschkes.domain.model.Measurement;
 import com.github.coerschkes.domain.model.MeasurementSeries;
-import com.github.coerschkes.util.GenericObjectMapper;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
