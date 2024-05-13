@@ -1,4 +1,4 @@
-package com.github.coerschkes;
+package com.github.coerschkes.application;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
