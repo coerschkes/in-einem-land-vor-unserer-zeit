@@ -1,6 +1,9 @@
 package com.github.coerschkes.domain.model;
 
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.github.coerschkes.util.GenericObjectMapper;
+
 public class MeasurementSeries {
 
     private final int measurementSeriesId;
@@ -40,6 +43,14 @@ public class MeasurementSeries {
 
     public void setMeasurements(Measurement[] measurements) {
         this.measurements = measurements;
+    }
+
+    public String toJson() throws JsonProcessingException {
+        return GenericObjectMapper.toJson(this);
+    }
+
+    public static MeasurementSeries fromJson(String json) throws JsonProcessingException {
+        return GenericObjectMapper.fromJson(json, MeasurementSeries.class);
     }
 
     public String gibAttributeAus() {

@@ -6,10 +6,10 @@ import com.github.coerschkes.domain.model.MeasurementSeries;
 
 import java.sql.SQLException;
 
-class MeasurementRepositoryImpl implements MeasurementRepository {
+public class MeasurementRepositoryImpl implements MeasurementRepository {
     private final MysqlConnector mysqlConnector;
 
-    MeasurementRepositoryImpl() {
+    public MeasurementRepositoryImpl() {
         mysqlConnector = new MysqlConnector();
     }
 

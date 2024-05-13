@@ -6,7 +6,7 @@ import com.github.coerschkes.domain.model.MeasurementSeries;
 
 import java.sql.SQLException;
 
-interface MeasurementRepository {
+public interface MeasurementRepository {
     /**
      * Reads all {@link Measurement} from a {@link MeasurementSeries} from the database.
      *
