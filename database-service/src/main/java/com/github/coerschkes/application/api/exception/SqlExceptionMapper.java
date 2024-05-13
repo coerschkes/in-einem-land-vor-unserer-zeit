@@ -1,4 +1,4 @@
-package com.github.coerschkes.application.api;
+package com.github.coerschkes.application.api.exception;
 
 import javax.ws.rs.core.Response;
 import javax.ws.rs.ext.ExceptionMapper;

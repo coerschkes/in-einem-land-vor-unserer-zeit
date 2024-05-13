@@ -1,4 +1,4 @@
-package com.github.coerschkes.application.api;
+package com.github.coerschkes.application.api.exception;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 
