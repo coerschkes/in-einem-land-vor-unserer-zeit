@@ -13,12 +13,12 @@ class MysqlConnector {
     private Connection connection;
 
     <T> T executeQuery(final String query, final Function<ResultSet, T> resultTransformer) throws SQLException, ClassNotFoundException {
-        LOGGER.debug("Executing query: " + query);
+        LOGGER.debug("Executing query: {}", query);
         this.connect();
         try (final Statement statement = this.connection.createStatement()) {
             return resultTransformer.apply(statement.executeQuery(query));
         } catch (SQLException e) {
-            LOGGER.error("Exception when executing query '" + query + "':", e);
+            LOGGER.error("Exception when executing query '{}':", query, e);
             throw e;
         } finally {
             this.closeConnection();
@@ -26,12 +26,12 @@ class MysqlConnector {
     }
 
     void executeUpdate(final String query) throws SQLException, ClassNotFoundException {
-        LOGGER.debug("Executing update query: " + query);
+        LOGGER.debug("Executing update query: {}", query);
         this.connect();
         try (final Statement statement = this.connection.createStatement()) {
             statement.executeUpdate(query);
         } catch (SQLException e) {
-            LOGGER.error("Exception when executing update query '" + query + "':", e);
+            LOGGER.error("Exception when executing update query '{}':", query, e);
             throw e;
         } finally {
             this.closeConnection();

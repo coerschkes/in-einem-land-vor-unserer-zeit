@@ -1,8 +1,6 @@
 package com.github.coerschkes.domain.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.github.coerschkes.util.GenericObjectMapper;
 
 public class Measurement {
 
@@ -27,30 +25,13 @@ public class Measurement {
         this.timeMillis = timeMillis;
     }
 
-    public int getMeasurementId() {
-        return measurementId;
-    }
-
-
     public double getMeasurementValue() {
         return measurementValue;
     }
 
 
-    public String getAttributes() {
-        return this.measurementId + ": " + this.measurementValue;
-    }
-
     public long getTimeMillis() {
         return timeMillis;
-    }
-
-    public String toJson() throws JsonProcessingException {
-        return GenericObjectMapper.toJson(this);
-    }
-
-    public static Measurement fromJson(final String json) throws JsonProcessingException {
-        return GenericObjectMapper.fromJson(json, Measurement.class);
     }
 
     @Override
