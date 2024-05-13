@@ -1,6 +1,5 @@
 package com.github.coerschkes.application.external.db;
 
-
 import com.github.coerschkes.domain.model.Measurement;
 import com.github.coerschkes.domain.model.MeasurementSeries;
 

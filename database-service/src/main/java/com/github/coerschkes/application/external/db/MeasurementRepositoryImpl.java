@@ -1,6 +1,5 @@
 package com.github.coerschkes.application.external.db;
 
-
 import com.github.coerschkes.domain.model.Measurement;
 import com.github.coerschkes.domain.model.MeasurementSeries;
 
@@ -29,12 +28,11 @@ public class MeasurementRepositoryImpl implements MeasurementRepository {
 
     @Override
     public void saveMeasurement(final int measurementSeriesId, final Measurement measurement) throws SQLException, ClassNotFoundException {
-        System.out.println("Executing update on db: " + QueryBuilder.insertIntoMeasurement(measurement, measurementSeriesId));
         this.mysqlConnector.executeUpdate(QueryBuilder.insertIntoMeasurement(measurement, measurementSeriesId));
     }
 
     @Override
-    public void saveMeasurementSeries(MeasurementSeries measurementSeries) throws SQLException, ClassNotFoundException {
+    public void saveMeasurementSeries(final MeasurementSeries measurementSeries) throws SQLException, ClassNotFoundException {
         this.mysqlConnector.executeUpdate(QueryBuilder.insertIntoMeasurementSeries(measurementSeries));
     }
 }
