@@ -1,19 +1,21 @@
 package com.github.coerschkes.domain.model;
 
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.github.coerschkes.util.GenericObjectMapper;
 
 public class MeasurementSeries {
-
     private final int measurementSeriesId;
     private final int timeMillis;
     private final String consumer;
     private final String measurementSize;
     private Measurement[] measurements;
 
-    public MeasurementSeries(int measurementSeriesId, int timeMillis,
-                             String consumer, String measurementSize) {
+    public MeasurementSeries(final @JsonProperty("measurementSeriesId") int measurementSeriesId,
+                             final @JsonProperty("timeMillis") int timeMillis,
+                             final @JsonProperty("consumer") String consumer,
+                             final @JsonProperty("measurementSize") String measurementSize) {
         super();
         this.measurementSeriesId = measurementSeriesId;
         this.timeMillis = timeMillis;
