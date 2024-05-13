@@ -9,6 +9,6 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>database-service</artifactId>
+    <artifactId>emu-service</artifactId>
     <packaging>war</packaging>
 </project>

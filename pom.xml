@@ -10,6 +10,7 @@
     <name>in-einem-land-vor-unserer-zeit</name>
     <modules>
         <module>database-service</module>
+        <module>emu-service</module>
     </modules>
     <packaging>pom</packaging>
 
