@@ -1,4 +1,4 @@
-package com.github.coerschkes.ineinemlandvorunsererzeit;
+package com.github.coerschkes;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
