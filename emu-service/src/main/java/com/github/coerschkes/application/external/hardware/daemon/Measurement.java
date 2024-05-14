@@ -1,4 +1,4 @@
-package com.github.coerschkes.daemon;
+package com.github.coerschkes.application.external.hardware.daemon;
 
 /**
  * Reference class for future communication

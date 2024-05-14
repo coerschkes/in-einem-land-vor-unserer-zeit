@@ -1,4 +1,4 @@
-package com.github.coerschkes.daemon;
+package com.github.coerschkes.application.external.hardware.daemon;
 
 enum EmuCommand {
     END_COMMUNICATION(new byte[]{0x01, 0x42, 0x30, 0x03}, "Connection closed"),

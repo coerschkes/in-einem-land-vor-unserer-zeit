@@ -1,4 +1,4 @@
-package com.github.coerschkes.daemon;
+package com.github.coerschkes.application.external.hardware.daemon;
 
 import net.sf.yad2xx.Device;
 import net.sf.yad2xx.FTDIException;

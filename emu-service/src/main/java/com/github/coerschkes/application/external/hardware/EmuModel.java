@@ -1,8 +1,8 @@
-package com.github.coerschkes;
+package com.github.coerschkes.application.external.hardware;
 
-import com.github.coerschkes.daemon.EmuConnector;
-import com.github.coerschkes.daemon.EmuDevice;
-import com.github.coerschkes.daemon.EmuInterface;
+import com.github.coerschkes.application.external.hardware.daemon.EmuConnector;
+import com.github.coerschkes.application.external.hardware.daemon.EmuDevice;
+import com.github.coerschkes.application.external.hardware.daemon.EmuInterface;
 import net.sf.yad2xx.FTDIException;
 
 import java.util.concurrent.CompletableFuture;
