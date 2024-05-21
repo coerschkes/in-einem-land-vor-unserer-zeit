@@ -62,6 +62,7 @@ class EmuDaemon extends Thread {
     }
 
     private void executeCommand() throws FTDIException {
+        this.buffer.setLength(0);
         currentCommand = Objects.requireNonNull(commandQueue.poll());
         emuDevice.write(currentCommand.getByteArray());
         if (currentCommand == EmuCommand.END_COMMUNICATION) {
@@ -76,7 +77,7 @@ class EmuDaemon extends Thread {
             System.out.println(currentCommand.getCallbackMessage());
             futureMap.get(currentCommand).complete(this.buffer.toString());
             futureMap.remove(currentCommand);
-            this.buffer.setLength(0);
+//            this.buffer.setLength(0);
             this.currentCommand = null;
         }
     }

@@ -50,7 +50,7 @@ public class EmuConnector implements EmuInterface {
     }
 
     private String formatPowerMeasurementValue(final String measurement) {
-        return "{ \"power\": \"" + measurement.substring(measurement.indexOf("(") + 1, measurement.indexOf("*")) + "\" }";
+        return measurement.substring(measurement.indexOf("(") + 1, measurement.indexOf("*"));
     }
 
     private void createDaemon() {
