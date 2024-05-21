@@ -27,7 +27,8 @@ class EmuDaemon extends Thread {
             try {
                 mainRoutine();
             } catch (FTDIException e) {
-                throw new RuntimeException(e);
+                connected = false;
+                futureMap.forEach((command, future) -> future.completeExceptionally(e));
             }
             super.run();
         }
@@ -42,6 +43,10 @@ class EmuDaemon extends Thread {
 
     void setConnected(final boolean connected) {
         this.connected = connected;
+    }
+
+    boolean isConnected() {
+        return connected;
     }
 
     private void mainRoutine() throws FTDIException {
