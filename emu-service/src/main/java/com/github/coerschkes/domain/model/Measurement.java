@@ -22,4 +22,20 @@ public class Measurement {
         this.measurementValue = measurementValue;
         this.timeMillis = timeMillis;
     }
+
+    public int getMeasurementId() {
+        return measurementId;
+    }
+
+    public int getMeasurementSeriesId() {
+        return measurementSeriesId;
+    }
+
+    public double getMeasurementValue() {
+        return measurementValue;
+    }
+
+    public long getTimeMillis() {
+        return timeMillis;
+    }
 }
