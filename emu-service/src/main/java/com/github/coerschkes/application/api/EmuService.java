@@ -4,8 +4,6 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.github.coerschkes.application.api.util.GenericObjectMapper;
 import com.github.coerschkes.application.external.hardware.daemon.EmuConnector;
 import com.github.coerschkes.domain.model.Measurement;
-import com.sun.org.slf4j.internal.Logger;
-import com.sun.org.slf4j.internal.LoggerFactory;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -16,26 +14,11 @@ import java.util.concurrent.ExecutionException;
 
 @Path("/emu")
 public class EmuService {
-    private static final Logger LOGGER = LoggerFactory.getLogger(EmuService.class);
-
     @GET
     @Path("/power")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response readCurrentPower() {
-        try {
-            return Response.ok(GenericObjectMapper.toJson(createMeasurement(EmuConnector.getInstance().getCurrentPower().get()))).build();
-        } catch (RuntimeException e) {
-            LOGGER.error("Unable to connect to emu device: ", e);
-            return Response.serverError().entity("{ \"error\": \"Unable to connect to device\" }").build();
-        } catch (ExecutionException e) {
-            LOGGER.error("Unable to execute: ", e);
-            return Response.serverError().entity("{ \"error\": \"Unable to execute request\" }").build();
-        } catch (InterruptedException e) {
-            LOGGER.error("Daemon thread interrupted: ", e);
-            return Response.serverError().entity("{ \"error\": \"Unable to communicate to daemon thread\" }").build();
-        } catch (JsonProcessingException e) {
-            throw new RuntimeException(e);
-        }
+    public Response readCurrentPower() throws JsonProcessingException, ExecutionException, InterruptedException {
+        return Response.ok(GenericObjectMapper.toJson(createMeasurement(EmuConnector.getInstance().getCurrentPower().get()))).build();
     }
 
     private Measurement createMeasurement(final String measurementValue) {
