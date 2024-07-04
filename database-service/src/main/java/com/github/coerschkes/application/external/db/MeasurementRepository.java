@@ -43,4 +43,13 @@ public interface MeasurementRepository {
      * @throws ClassNotFoundException - In case any problems with the sql driver occur
      */
     void saveMeasurementSeries(final MeasurementSeries measurementSeries) throws SQLException, ClassNotFoundException;
+
+    /**
+     * Deletes all {@link Measurement} from a {@link MeasurementSeries} from the database.
+     *
+     * @param measurementSeriesId - The id of the {@link MeasurementSeries}.
+     * @throws SQLException           - In case sql problems occur during database interaction
+     * @throws ClassNotFoundException - In case any problems with the sql driver occur
+     */
+    void deleteMeasurementsFromSeries(int measurementSeriesId) throws SQLException, ClassNotFoundException;
 }

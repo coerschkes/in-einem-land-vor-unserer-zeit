@@ -36,6 +36,14 @@ public class DatabaseService {
         return Response.ok(measurementsJson).build();
     }
 
+    @DELETE
+    @Path("/{id}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response deleteMeasurements(final @PathParam("id") int id) throws SQLException, ClassNotFoundException {
+        repository.deleteMeasurementsFromSeries(id);
+        return Response.noContent().build();
+    }
+
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
