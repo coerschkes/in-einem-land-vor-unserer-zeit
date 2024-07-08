@@ -49,7 +49,8 @@ public class MeasurementRepositoryImpl implements MeasurementRepository {
     }
 
     @Override
-    public void deleteMeasurementsFromSeries(int measurementSeriesId) throws SQLException, ClassNotFoundException {
+    public void deleteMeasurementSeries(int measurementSeriesId) throws SQLException, ClassNotFoundException {
         this.mysqlConnector.executeUpdate(QueryBuilder.deleteMeasurementsFromSeries(measurementSeriesId));
+        this.mysqlConnector.executeUpdate(QueryBuilder.deleteMeasurementSeries(measurementSeriesId));
     }
 }

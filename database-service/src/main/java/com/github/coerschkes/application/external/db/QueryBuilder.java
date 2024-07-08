@@ -9,6 +9,7 @@ class QueryBuilder {
     private static final String QUERY_SELECT_ALL_MEASUREMENT_SERIES = "SELECT * FROM measurementSeries";
     private static final String QUERY_INSERT_INTO_MEASUREMENT_SERIES = "INSERT INTO measurementSeries (measurementSeriesId, timeInterval, consumer, measurementSize) VALUES(%s, %s, '%s', '%s')";
     private static final String QUERY_DELETE_MEASUREMENTS_FROM_SERIES = "DELETE FROM measurement WHERE measurementSeriesId = %s";
+    private static final String QUERY_DELETE_MEASUREMENT_SERIES = "DELETE FROM measurementSeries WHERE measurementSeriesId = %s";
 
     static String selectMeasurementWithSeriesId(final int measurementSeriesId) {
         return String.format(QUERY_SELECT_MEASUREMENT_WITH_SERIES_ID, measurementSeriesId);
@@ -28,5 +29,9 @@ class QueryBuilder {
 
     static String deleteMeasurementsFromSeries(final int measurementSeriesId) {
         return String.format(QUERY_DELETE_MEASUREMENTS_FROM_SERIES, measurementSeriesId);
+    }
+
+    public static String deleteMeasurementSeries(int measurementSeriesId) {
+        return String.format(QUERY_DELETE_MEASUREMENT_SERIES, measurementSeriesId);
     }
 }
